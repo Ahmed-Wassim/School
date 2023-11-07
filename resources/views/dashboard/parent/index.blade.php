@@ -41,7 +41,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($parents as $parent)
+                            @forelse ($parents as $parent)
                                 <tr>
                                     <td>{{ $parent->fname }}</td>
                                     <td>{{ $parent->lname }}</td>
@@ -49,10 +49,46 @@
                                     <td>{{ $parent->national_id }}</td>
                                     <td>{{ $parent->phone }}</td>
                                     <td>
-
+                                        <a href="{{ route('parent.edit', $parent->id) }}" class="btn btn-info">Edit</a>
+                                        <!-- Large modal -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModalCenter"> Delete </button>
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header align-items-start">
+                                                        <div class="modal-title">
+                                                            <div class="mb-30">
+                                                                <h6>EXPERTISE</h6>
+                                                                <h2>Delete Parent</h2>
+                                                                <p>Are you sure you want to delete this parent?</p>
+                                                            </div>
+                                                        </div>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"><i class="fa fa-times"
+                                                                aria-hidden="true"></i></button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <form action="{{ route('parent.destroy', $parent->id) }}"
+                                                            method="POST">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">No</button>
+                                                            <button type="submit" class="btn btn-danger">Yes</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="6" class="text-center">No Parents were found</td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

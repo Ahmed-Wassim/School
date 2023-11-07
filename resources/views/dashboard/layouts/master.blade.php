@@ -46,6 +46,8 @@
     </div>
 
     @include('dashboard.layouts.scripts')
+    @include('sweetalert::alert')
+
 </body>
 
 <!-- Mirrored from themes.potenzaglobalsolutions.com/html/webmin-bootstrap-4-angular-12-admin-dashboard-template/html-dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Sep 2023 10:49:40 GMT -->

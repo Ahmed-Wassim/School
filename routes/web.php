@@ -23,5 +23,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function () {
-    Route::resource('parent', ParentController::class);
+    Route::resource('parent', ParentController::class)->except(['show']);
 });
