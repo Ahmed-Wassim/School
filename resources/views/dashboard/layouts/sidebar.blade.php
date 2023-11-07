@@ -30,44 +30,23 @@
                     <li><a href="{{ route('parent.create') }}">Add Parent</a></li>
                 </ul>
             </li>
-            <!-- menu item calendar-->
+            <!-- menu item Elements-->
             <li>
-                <a href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#calendar-menu">
+                <a href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#teacher">
                     <div class="pull-left">
-                        <i class="ti-calendar"></i><span class="right-nav-text">calendar</span>
+                        <i class="ti-palette"></i><span class="right-nav-text">Teacher</span>
                     </div>
                     <div class="pull-right">
                         <i class="ti-plus"></i>
                     </div>
                     <div class="clearfix"></div>
                 </a>
-                <ul id="calendar-menu" class="collapse" data-bs-parent="#sidebarnav">
+                <ul id="teacher" class="collapse" data-bs-parent="#sidebarnav">
                     <li>
-                        <a href="calendar.html">Events Calendar
-                        </a>
+                        <a href="{{ route('teacher.index') }}">Teachers</a>
                     </li>
-                    <li>
-                        <a href="calendar-list.html">List Calendar</a>
-                    </li>
+                    <li><a href="{{ route('teacher.create') }}">Add Teacher</a></li>
                 </ul>
-            </li>
-            <!-- menu item todo-->
-            <li>
-                <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo
-                        list</span>
-                </a>
-            </li>
-            <!-- menu item chat-->
-            <li>
-                <a href="chat-page.html"><i class="ti-comments"></i><span class="right-nav-text">Chat
-                    </span></a>
-            </li>
-            <!-- menu item mailbox-->
-            <li>
-                <a href="mail-box.html"><i class="ti-email"></i><span class="right-nav-text">Mail
-                        box</span>
-                    <span class="badge bg-warning float-end mt-1">HOT</span>
-                </a>
             </li>
             <!-- menu item Charts-->
             <li>

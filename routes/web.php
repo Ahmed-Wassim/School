@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ParentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,5 @@ require __DIR__ . '/auth.php';
 
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function () {
     Route::resource('parent', ParentController::class)->except(['show']);
+    Route::resource('teacher', TeacherController::class)->except(['show']);
 });

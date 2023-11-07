@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master')
 
 @section('title')
-    Parent
+    Teacher
 @endsection
 
 @push('css')
@@ -16,7 +16,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb pt-0 pe-0 float-start float-sm-end">
                     <li class="breadcrumb-item"><a href="index.html" class="default-color">Home</a></li>
-                    <li class="breadcrumb-item active">Parent</li>
+                    <li class="breadcrumb-item active">Teacher</li>
                 </ol>
             </div>
         </div>
@@ -27,7 +27,7 @@
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
-                <h5 class="card-title border-0 pb-0">Parents Information</h5>
+                <h5 class="card-title border-0 pb-0">Teachers Information</h5>
                 <div class="table-responsive">
                     <table class="mb-0 table table-hover">
                         <thead>
@@ -35,21 +35,19 @@
                                 <th>Firstname</th>
                                 <th>Lastname</th>
                                 <th>Email</th>
-                                <th>National ID</th>
                                 <th>Phone</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($parents as $parent)
+                            @forelse ($teachers as $teacher)
                                 <tr>
-                                    <td>{{ $parent->fname }}</td>
-                                    <td>{{ $parent->lname }}</td>
-                                    <td>{{ $parent->email }}</td>
-                                    <td>{{ $parent->national_id }}</td>
-                                    <td>{{ $parent->phone }}</td>
+                                    <td>{{ $teacher->fname }}</td>
+                                    <td>{{ $teacher->lname }}</td>
+                                    <td>{{ $teacher->email }}</td>
+                                    <td>{{ $teacher->phone }}</td>
                                     <td>
-                                        <a href="{{ route('parent.edit', $parent->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ route('teacher.edit', $teacher->id) }}" class="btn btn-info">Edit</a>
                                         <!-- Large modal -->
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                             data-bs-target="#exampleModalCenter"> Delete </button>
@@ -61,8 +59,8 @@
                                                         <div class="modal-title">
                                                             <div class="mb-30">
                                                                 <h6>EXPERTISE</h6>
-                                                                <h2>Delete Parent</h2>
-                                                                <p>Are you sure you want to delete this parent?</p>
+                                                                <h2>Delete Teacher</h2>
+                                                                <p>Are you sure you want to delete this teacher?</p>
                                                             </div>
                                                         </div>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -70,7 +68,7 @@
                                                                 aria-hidden="true"></i></button>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="{{ route('parent.destroy', $parent->id) }}"
+                                                        <form action="{{ route('teacher.destroy', $teacher->id) }}"
                                                             method="POST">
                                                             @method('DELETE')
                                                             @csrf
@@ -86,7 +84,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="text-center">No Parents were found</td>
+                                    <td colspan="6" class="text-center">No Teachers were found</td>
                                 </tr>
                             @endforelse
                         </tbody>
