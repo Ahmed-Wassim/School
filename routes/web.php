@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ParentController;
@@ -26,4 +27,5 @@ require __DIR__ . '/auth.php';
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function () {
     Route::resource('parent', ParentController::class)->except(['show']);
     Route::resource('teacher', TeacherController::class)->except(['show']);
+    Route::resource('grade', GradeController::class)->except(['show', 'edit', 'create']);
 });

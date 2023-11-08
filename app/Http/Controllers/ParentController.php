@@ -46,13 +46,6 @@ class ParentController extends Controller
         return redirect()->route('parent.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

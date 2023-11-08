@@ -48,6 +48,11 @@
                     <li><a href="{{ route('teacher.create') }}">Add Teacher</a></li>
                 </ul>
             </li>
+            <!-- menu item grades-->
+            <li>
+                <a href="{{ route('grade.index') }}"><i class="ti-panel"></i><span class="right-nav-text">Grades</span>
+                </a>
+            </li>
             <!-- menu item Charts-->
             <li>
                 <a href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#chart">
